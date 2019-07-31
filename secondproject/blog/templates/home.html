@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<body>
+{% for blog in blogs.all %}
+
+<div style="border: 1px solid darkslategrey; border-radius: 12px; border-color: black;
+            margin-left: 30px; margin-top: 10px; padding:25px;">
+            
+
+<h1 style="color: gray">{{blog.id}}번째 게시글</h1>
+<p>{{blog.title}}</p>
+<p>{{blog.pub_date}}</p>
+<p>{{blog.summary}}<a href = "{% url 'detail' blog.id %}">...more</a></p>
+<br>
+</div>
+{% endfor %}
+</body>
+{% endblock %}
